@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html class="skin-dark" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .blankall{height:1px;background-color:rgba(90, 89, 89, 0.74);}
+    .blank1{height:1px;background-color:rgba(90, 89, 89, 0.74);margin:5px 15px 5px 15px}
+    .blank5{height:5px;}
+    .blank10{height:10px;}
+    .blank15{height:15px;}
+    .blank20{height:20px;}
+    .blank25{height:25px;}
+    .blank45{height:45px;}
+    *{
+        box-sizing: border-box;
+        margin:0;
+        padding:0;
+    }
+    html{
+        overflow-x: hidden;
+    }
+    html{
+        overflow-y: scroll;
+    }
+    body{
+        /*background-color:white;*/
+        line-height: 1.334;
+        color:#8cc6ff;
+        
+    }
+    .bg-body{
+        background-image: url("https://www.bing.com/az/hprichbg/rb/SiberianJay_ZH-CN8167378429_1920x1080.jpg");
+        background-repeat: repeat;
+    }
+    .clearfix::after{
+        content:" ";
+        clear: both;
+        display:block;
+        height:0px;
+        overflow: hidden;
+        visibility: hidden;
+    }
+    .nav{
+        height:51px;
+    }
+    .nav_area{
+        
+        position:fixed;
+        z-index:99;
+        width:100%;
+        height:51px;
+        top:0px;
+        left:0px;
+        _position:absolute;
+        background-color:#001e3b;
+    }
+    .center_area{
+        position: relative;
+        height:51px;
+        
+    }
+    .navigation{
+        width:1046px;
+        position:relative;
+        margin:0 auto;
+    }
+    .background-container{
+        background-repeat: no-repeat;
+        background-position:center top;
+        background-attachment: scroll;
+        background-image: url("https://www.bing.com/az/hprichbg/rb/SiberianJay_ZH-CN8167378429_1920x1080.jpg");
+
+    }
+    .layout-head-inner{
+        width:1046px;
+        position:relative;
+        margin: 0 auto;
+    }
+    .layout-head .head-info{
+        position:absolute;
+        top:20px;
+        left:0px;
+    }
+    .layout-head .head-info h1{
+        font-weight: normal;
+        margin-bottom: 3px;
+        
+        color:#8cc6ff;
+    }
+    .head-info .head-title{
+        float:left;
+        clear:left;
+    }
+    .layout-head .head-detail{
+        position:absolute;
+        bottom:0px;
+        left:143px;
+    }
+    .layout-head .head-detail-name{
+        margin-bottom:10px;
+    }
+    .layout-head .head-detail-name a,.layout-head .head-detail-name span{
+        vertical-align: middle;
+        display:inline-block;
+        margin-right:10px;
+    }
+    .layout-head .user-name{
+        font-size:20px;
+        max-width:145px;
+        _width:145px;
+    }
+    .layout-head .head-detail-info{
+        height:62px;
+        font-size:0px;
+
+    }
+    .layout-head .head-detail-info .detail-info-level{
+        display:inline-block;
+        vertical-align: middle;
+        margin:0 10px 0 0;
+        position:relative;
+        top:-2px;
+    }
+    .layout-head .f_user_vip{
+        vertical-align: bottom;
+        height:26px;
+        margin-right:2px;
+    }
+    a{
+        text-decoration: none;
+    }
+    .layout-nav{
+        border-top:1px solid #0f2f4d;
+        border-bottom:1px solid #0f2f4d;
+        background-color:#265380;
+    }
+    .layout-nav{
+        height:51px;
+        margin:0 auto;
+    }
+    .layout-nav .nav-inner{
+        list-style-type: none;
+    }
+    .layout-nav .nav-inner li{
+        float:left;
+        margin-top:15px;
+        padding:10px;
+        
+    }
+    .layout-nav .nav-inner li a{
+        
+        color:#8cc6ff;
+    }
+    .layout-nav .nav-inner li a:hover{
+        text-decoration: underline;
+
+    }
+    .layout-nav-inner{
+        position:relative;
+        width:1046px;
+        margin:0 auto;
+        height:50px;
+    }
+    .layout-nav .head-avatar{
+        position:absolute;
+        bottom:20px;
+        left:0px;
+        width:126px;
+        height:126px;
+        border-radius: 3px;
+        /*border:0px solid #d9d9d9;*/
+        font-size:0px;
+    }
+    .layout-nav .head-avatar a{
+        text-decoration: none;
+    }
+    .layout-nav .head-avatar .head-dress{
+        width:128px;
+        height:128px;
+        position:absolute;
+        left:-1px;
+        top:-1px;
+        background-repeat: no-repeat;
+    }
+   
+    .layout-nav .head-avatar .user-avatar{
+        width:120px;
+        height:120px;
+        border-radius: 2px;
+        border:3px solid #FFF;
+    }
+    .content_body{
+        padding-top:20px;
+    }
+    
+    .layout-page{
+        width:1038px;
+        margin:0 auto;
+    }
+    .layout-page .col-main{
+        float:right;
+        width:868px;
+    }
+    
+    .left_content{
+        width:170px;
+        float:right;
+        border:0px solid #eee;
+    }
+    .layout-page .col-main .medium_content{
+        width:592px;
+        float:left;
+        margin-left:23px;
+        border: 0px solid #F1F1F1;
+        
+    }
+    .layout-page .col-main .right_content{
+        width:230px;
+        float:right;
+        position:relative;
+        border:0px solid #eee;
+    }
+    .dropdown{
+        float:left;
+    }
+    .dropdown a,.lastchild a,.dropbutton{
+        display:block;
+        color:#bababa;
+        /*text-align: center;*/
+        padding:15px;
+        text-decoration: none;
+        background-color:#001e3b;
+    }
+    .dropdown a:hover,.lastchild a:hover,.dropdown:hover .dropbutton{
+        background-color:#265380;
+        color:white;
+    }
+    .dropdown:hover .drop-content{
+        display:block;
+        z-index: 5;
+    }
+   
+    .drop-content{
+        display:none;
+        position:absolute;
+        background-color:#f9f9f9;
+        min-width:160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    }
+    .drop-content a{
+        display:block;
+        
+        padding:12px;
+        text-decoration:none;
+    }
+    .drop-content a:hover{
+        background-color:#f1f1f1;
+        color:#aaa;
+    }
+    .left_content .left_list{
+        list-style-type: none;
+        margin-bottom:12px;
+        
+    }
+    .left_content .connect_bottom{
+        margin-bottom: 0px;
+        list-style-type: none;
+    }
+    .left_content li a{
+        display:block;
+        text-decoration: none;
+        color:#c8e1fa;
+        padding:8px 16px;
+        background-color:#224b73;
+    }
+    .left_content li a:hover{
+        background-color:#265380;
+    }
+    .left_content li p{
+        text-align: center;
+        padding:8px 16px;
+        color:#c8e1fa;
+        background-color:#224b73;
+        
+    }
+    .left_content li p:hover{
+        color:#555;
+    }
+        
+    .chatting_online{
+        height:68px;
+        width:90%;
+        color:#c8e1fa;
+        font-size:15px;
+        border:none;
+        float:left;
+        border-right:1px solid black;
+        background-color:#224b73;
+        
+    }
+    .send{
+        width:10%;
+        height:68px;
+        border: none;
+        color:#c8e1fa;
+        float:left;
+        background-color:#224b73;
+    }
+    .send:hover{
+        
+        background-color:#265380;
+    }
+    .friend_action{
+        margin-top:12px;
+        color:#c8e1fa;
+        text-indent:25px;
+        height:35px;
+        background-color:#224b73;
+    }
+    .friend{
+        background-color:#224b73;
+        margin-bottom:12px;
+    }
+    
+    .friend_thinking ul li{
+        float:left;
+    }
+    .friend_thinking ul{
+        list-style-type: none;
+    }
+    .friend_thinking ul li img{
+        width:177px;
+        height:177px;
+        
+        margin-left:15px;
+        margin-right:0px;;
+        margin-bottom:10px;
+        
+    }
+    .friend_thinking ul li .last{
+        float:right;
+    }
+    .friend_thinking p{
+        
+        color: #c8e1fa;
+        margin:5px 15px 5px 15px;
+    }
+    .right_content .data{
+        width:228px;
+        height:68px;
+        position: relative;
+        color:#8cc6ff;
+        border:1px solid #0f2f4d;
+        margin-bottom:12px;
+        background-color:#265380;
+    }
+    .right_content .data_left{
+        position:absolute;
+        z-index:3;
+        height:68px;
+        width:66px;
+        color:#c8e1fa;
+        padding:0px 6px;
+        text-align: center;        
+        background-color:#0f2f4d;
+    }
+    .right_content .data_left .data_left_week{
+        display:block;
+        width:100%;
+        font-size:18px;
+        font-family:"Microsoft YaHei";
+        padding:13px 0 2px 0;
+    }
+    .right_content .data_left .data_left_day{
+        display:block;
+        font-size:12px;
+        font-family:"Gulim";
+        font-weight: bold;
+        padding-right:3px;
+
+    }
+    .right_content .data_right{
+        position:absolute;
+        top:0px;
+        left:0px;
+        
+        z-index:2;
+        line-height:68px;
+        padding-left:100px;
+        font-size:30px;
+        font-family:"Microsoft YaHei";
+        text-decoration: none;
+        height:68px;
+        width:228px;
+        
+        color:#c8e1fa;
+        background-color:#265380;
+    }
+    .right_content .data_count{
+        position:absolute;
+        top:15px;
+        right:-3px;
+        width:51px;
+        z-index:4;
+        margin:0px 6px 0px 21px;
+        height:40px;
+        overflow: hidden;
+    }
+    .right_content .data_count .count_num{
+        font-size:20px;
+        font-family: "Gulim";
+        font-weight: bold;
+        width:58px;
+        height:22px;
+        display: inline-block;
+        line-height:1.0;
+    }
+    .right_content .data_count .count_word{
+        width:48px;
+        display:inline-block;
+        font-family: "Glium";
+        font-weight: bold;
+        padding-left:1px;
+        font-size: 12px;
+        line-height: 0.9;
+        text-transform: capitalize;
+    }
+    /*.right_content .data_right .data_right_clip{
+        display:none;
+        width:15px;
+        height:13px;
+        line-height:13px;
+        overflow: hidden;
+        position:absolute;
+        right:-1px;
+        top:28px;
+        z-index:7;
+    }*/
+    .data:hover{
+        opacity: 0.95;
+    }
+    .main{
+        background-color:#224b73;
+        padding:10px 15px 0px 15px;
+        margin-bottom:12px;
+    }
+    .hotnews p,.hotnews .first{
+        color:#c8e1fa;
+        font-size:10px;
+        text-decoration: none;
+    }
+    .hotnews .lst{
+        color:#bababa;
+        font-size:10px;
+        text-decoration: none;
+    }
+    .hotnews .lst:hover{
+        color:#c8e1fa;
+        text-decoration: underline;
+    }
+    .hotnews ol{
+        list-style-type: none;
+    }
+    .hotnews ol li a{
+        text-decoration: none;
+    }
+    .hotnews ol li a:hover{
+        color:white;
+        text-decoration: underline;
+    }
+    .hotnews ol li span{
+        display:block;
+        margin-bottom:45px;
+        
+        width:100%;
+        position: relative;
+        top:30px;
+        color:#c8e1fa;
+        font-family: "Microsoft YaHei";
+        font-size:15px;
+    }
+    .hotnews ol li img{
+        width:95px;
+        height:95px;
+        margin-top:10px;
+        margin-right:10px;
+        float:left;
+    }
+    .pic_list{
+        float:left;
+        
+        margin-top:10px;
+        margin-right:11px;
+    }
+    .text_list{
+        float:left;
+        text-align: center;
+        margin-top:10px;
+        margin-right:29px;
+    }
+</style>
+<body class="bg-body">
+    <div class="nav">
+    <div class="nav_area">
+        <div class="center_area">
+        <div class="clearfix">
+            <div class="navigation">
+                <div class="dropdown"><a href="#">主页</a></div>
+                <div class="dropdown">
+                    <a class="dropbutton" href="javascript:;">相册</a>
+                    <div class="drop-content">
+                        <a href="webwxgetmsgimg.jpg">我</a>
+                        <a href="C:\Users\Administrator\Desktop\family.html">家人</a>
+                        <a href="#">朋友</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a class="dropbutton" href="javascript:;">空间</a>
+                    <div class="drop-content">
+                        <a href="#">QQ空间</a>
+                        <a href="#">VR空间</a>
+                        <a href="#">虚拟空间</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a class="dropbutton" href="javascript:;">个人网页</a>
+                    <div class="drop-content">
+                        <a href="https://weibo.com/?ocid=MSNCNLG2-9" target="_blank">Sina Weibo</a>
+                        <a href="https://wx.qq.com/?ocid=MSNCNLG11-2" target="_blank">ChatOnline</a>
+                        <a href="https://www.facebook.com.hk" target="_blank">Facebook</a>
+                    </div>
+                </div>
+                <div class="lastchild" style="float:right;"><a href="#">个人中心</a></div>
+            </div>
+            <div class="lastchild" style="position:absolute;top:0px;right:0px"><a href="#">登陆</a></div>
+        </div>
+        </div>
+        
+    </div>
+    </div>
+    <div class="background-container">
+        <div class="layout-head">
+            <div class="layout-head-inner" style="background:no-repeat;height:250px;">
+                <div class="head-info">
+                    <h1 class="head-title">
+                        <span class="title-text">心想事成的幸福空间</span>
+                    </h1>
+                </div>
+                <div class="head-detail">
+                    <div class="head-detail-name">
+                        <span class="user-name textoverflow">Knight</span>
+                        <span class="user-vip-info"></span>
+                    </div>
+                    <div class="head-detail-info clearfix">
+                        <div class="detail-info-level">
+                                <a class="f_user_vip qz_ichotclick " id="diamon" style="cursor:pointer;" href="http://pay.qq.com/ipay/index.shtml?n=12&amp;c=xxjzgw,xxjzghh&amp;aid=info.nickname&amp;ch=qdqb,kj" target="_blank" data-super="0" data-year="" data-isleave="true">
+                                    <i class="qz_vip_icon_l qz_vip_icon_l_gray_1"></i>
+                                </a>
+                        </div>
+                        <div class="detail-info-con"></div>
+                        <div class="user-vip-info"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layout-nav">
+            <div class="layout-nav-inner">
+                <div class="head-avatar">
+                    <a title="" href="javascript:;">
+                        <div class="head-dress" style="pointer-events:none"></div>
+                        <img class="user-avatar"id="QM_OwnerInfo_Icon" src="Owner.jpg">
+                    </a>
+                </div>
+                <ul class="nav-inner">
+                    <li><a href="#">主页</a></li>
+                    <li><a href="#">日志</a></li>
+                    <li><a href="#">相册</a></li>
+                    <li><a href="#">留言板</a></li>
+                    <li><a href="#">说说</a></li>
+                    <li><a href="#">个人档</a></li>
+                    <li><a href="#">音乐</a></li>
+                    <li><a href="#">更多</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content_space">
+            <div class="content_body">
+            <div class="layout-page clearfix">
+        
+              <div class="col-main">
+
+              <div class="medium_content">
+                <div class="db clearfix">
+                    <div class="talking">
+                        <input class="chatting_online" type="text" value="说点什么吧">
+                        <input class="send" type="submit" value="发送">
+                    </div>
+                </div>
+                
+                <div class="friend_action">
+                    <div class="blank5"></div>
+                    <p class="friendaction">全部动态</p>
+                </div>
+                
+                <div class="friend friend_guokai">
+                    <div class="blankall"></div>
+                    <div class="clearfix">
+                        <div class="dropdown">
+                            <img src="friend_guokai.jpg" style="margin:15px;">
+                                <div class="drop-content">
+                                    <img src="friend_guokai.jpg" style="float:left; margin:20px;width:70px;height:70px;">
+                                    <div style="float:right;margin-top:19px;margin-right:35px;">
+                                    <p style="font-size:23px;">郭恺</p>
+                                    <p style="font-size:15px;color:#999">男 处女座</p><br>
+                                    <p style="font-size:15px;">你们有5个共同好友</p><br>
+                                    <p style="font-size:16px;color:blue">亲密度<span>54</span></a>
+                                    <div class="blank15"></div>
+                                </div>
+                                <div style="clear:both;background-color:rgb(233, 233, 233)">
+                                    <div class="blank45"></div>
+                                </div>  
+                            </div>
+                        </div>
+                    <div class="friend_tag" style="float:left">
+                        <div class="blank15"></div>
+                        <a class="textname" href="#" style="color:#c8e1fa;text-decoration:none;">郭恺</a>
+                        <div class="blank10"></div>
+                        <p class="time" style="color:#c8e1fa;">19:03</p>
+                    </div>
+                    
+                    </div>
+                    <div class="friend_thinking">
+                        <ul class="clearfix">
+                            <li><a href="#"><img src="psbHHQ4W5MK1.jpg"></a></li>
+                            <li><a href="#"><img src="psbINF6GY632.jpg"></a></li>
+                            <li><a href="#"><img class="last" src="psbSZORLINY3.jpg"></a></li>
+                        </ul>
+                        <ul class="clearfix">
+                            <li><a href="#"><img src="psbHHQ4W5MK1.jpg"></a></li>
+                            <li><a href="#"><img src="psbINF6GY632.jpg"></a></li>
+                            <li><a href="#"><img class="last" src="psbSZORLINY3.jpg"></a></li>
+                        </ul>
+                        <ul class="clearfix">
+                            <li><a href="#"><img src="psbHHQ4W5MK1.jpg"></a></li>
+                            <li><a href="#"><img src="psbINF6GY632.jpg"></a></li>
+                            <li><a href="#"><img class="last" src="psbSZORLINY3.jpg"></a></li>
+                        </ul>
+                        <p>来自<span> </span>华为<span> </span>P9</p>
+                        <p>上传10张照片/视频到《Maravilla》</p>
+                        <div class="blank10"></div>
+                        <p>浏览239次</p>
+                        <div class="blank1"></div>
+                        <p style="text-indent:31px;">Knight、郭恺、AngryTuzki、Hell、Spain.7妹、风雪里的战狼、*为@闯天涯、Ateliezlin麟、恒哼哈嘿、谜の古乐兽、浩宇伦彼、Why not不骨、纵然是陌路英雄、豌豆、David Villa等22人觉得很赞</p>
+                        <p><input class="evaluate" value="评论" style="color:#c8e1fa;border:1px solid rgba(90, 89, 89, 0.74);background-color:#224b73;height:35px;width:100%;"></p>
+                        <div class="blank10"></div>
+                    </div>
+                </div>
+
+                
+                
+                <div class="friend friend_guokai">
+                    <div class="clearfix">
+                    <!--<div class="friend_name">-->
+                        <div class="dropdown">
+                            <img src="friend_guokai.jpg" style="margin:15px;">
+                            <div class="drop-content">
+                                <img src="friend_guokai.jpg" style="float:left; margin:20px;width:70px;height:70px;">
+                                <div style="float:right;margin-top:19px;margin-right:35px;">
+                                    <p style="font-size:23px;">郭恺</p>
+                                    <p style="font-size:15px;color:#999">男 处女座</p><br>
+                                    <p style="font-size:15px;">你们有5个共同好友</p><br>
+                                    <p style="font-size:16px;color:blue">亲密度<span>54</span></a>
+                                    <div class="blank15"></div>
+                                </div>
+                                <div style="clear:both;background-color:rgb(233, 233, 233)">
+                                    <div class="blank45"></div>
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="friend_tag" style="float:left">
+                            <div class="blank15"></div>
+                            <a class="textname" href="#" style="color:#c8e1fa;text-decoration:none;">郭恺</a>
+                            <div class="blank10"></div>
+                            <p class="time" style="color:#c8e1fa;">19:03</p>
+                        </div>
+                    <!--</div>-->
+                    </div>
+                    <div class="friend_thinking">
+                        <ul class="clearfix">
+                            <li><a href="#"><img src="psbHHQ4W5MK1.jpg"></a></li>
+                            <li><a href="#"><img src="psbINF6GY632.jpg"></a></li>
+                            <li><a href="#"><img class="last" src="psbSZORLINY3.jpg"></a></li>
+                        </ul>
+                        <ul class="clearfix">
+                            <li><a href="#"><img src="psbHHQ4W5MK1.jpg"></a></li>
+                            <li><a href="#"><img src="psbINF6GY632.jpg"></a></li>
+                            <li><a href="#"><img class="last" src="psbSZORLINY3.jpg"></a></li>
+                        </ul>
+                        <ul class="clearfix">
+                            <li><a href="#"><img src="psbHHQ4W5MK1.jpg"></a></li>
+                            <li><a href="#"><img src="psbINF6GY632.jpg"></a></li>
+                            <li><a href="#"><img class="last" src="psbSZORLINY3.jpg"></a></li>
+                        </ul>
+                        <p>来自<span> </span>华为<span> </span>P9</p>
+                        <p>上传10张照片/视频到《Maravilla》</p>
+                        <div class="blank10"></div>
+                        <p>浏览239次</p>
+                        <div class="blank1"></div>
+                        <p style="text-indent:31px;">Knight、郭恺、AngryTuzki、Hell、Spain.7妹、风雪里的战狼、*为@闯天涯、Ateliezlin麟、恒哼哈嘿、谜の古乐兽、浩宇伦彼、Why not不骨、纵然是陌路英雄、豌豆、David Villa等22人觉得很赞</p>
+                        <p><input class="evaluate" value="评论" style="color:#c8e1fa;border:1px solid rgba(90, 89, 89, 0.74);background-color:#224b73;height:35px;width:100%;"></p>
+                        <div class="blank10"></div>
+                    </div>
+                </div>
+
+                
+                
+                <div class="friend friend_guokai">
+                    <div class="clearfix">
+                        <!--<div class="friend_name">-->
+                            <div class="dropdown">
+                                <img src="friend_guokai.jpg" style="margin:15px;">
+                                <div class="drop-content">
+                                    <img src="friend_guokai.jpg" style="float:left; margin:20px;width:70px;height:70px;">
+                                    <div style="float:right;margin-top:19px;margin-right:35px;">
+                                        <p style="font-size:23px;">郭恺</p>
+                                        <p style="font-size:15px;color:#999">男 处女座</p><br>
+                                        <p style="font-size:15px;">你们有5个共同好友</p><br>
+                                        <p style="font-size:16px;color:blue">亲密度<span>54</span></a>
+                                        <div class="blank15"></div>
+                                    </div>
+                                    <div style="clear:both;background-color:rgb(233, 233, 233)">
+                                        <div class="blank45"></div>
+                                    </div>  
+                                </div>
+                            </div>
+                        <div class="friend_tag" style="float:left">
+                            <div class="blank15"></div>
+                            <a class="textname" href="#" style="color:#c8e1fa;text-decoration:none;">郭恺</a>
+                            <div class="blank10"></div>
+                            <p class="time" style="color:#c8e1fa;">19:03</p>
+                        </div>
+                        <!--</div>-->
+                    </div>
+                    <div class="friend_thinking">
+                        <ul class="clearfix">
+                            <li><a href="#"><img src="psbHHQ4W5MK1.jpg"></a></li>
+                            <li><a href="#"><img src="psbINF6GY632.jpg"></a></li>
+                            <li><a href="#"><img class="last" src="psbSZORLINY3.jpg"></a></li>
+                        </ul>
+                        <ul class="clearfix">
+                            <li><a href="#"><img src="psbHHQ4W5MK1.jpg"></a></li>
+                            <li><a href="#"><img src="psbINF6GY632.jpg"></a></li>
+                            <li><a href="#"><img class="last" src="psbSZORLINY3.jpg"></a></li>
+                        </ul>
+                        <ul class="clearfix">
+                            <li><a href="#"><img src="psbHHQ4W5MK1.jpg"></a></li>
+                            <li><a href="#"><img src="psbINF6GY632.jpg"></a></li>
+                            <li><a href="#"><img class="last" src="psbSZORLINY3.jpg"></a></li>
+                        </ul>
+                        <p>来自<span> </span>华为<span> </span>P9</p>
+                        <p>上传10张照片/视频到《Maravilla》</p>
+                        <div class="blank10"></div>
+                        <p>浏览239次</p>
+                        <div class="blank1"></div>
+                        <p style="text-indent:31px;">Knight、郭恺、AngryTuzki、Hell、Spain.7妹、风雪里的战狼、*为@闯天涯、Ateliezlin麟、恒哼哈嘿、谜の古乐兽、浩宇伦彼、Why not不骨、纵然是陌路英雄、豌豆、David Villa等22人觉得很赞</p>
+                        <p><input class="evaluate" value="评论" style="color:#c8e1fa;border:1px solid rgba(90, 89, 89, 0.74);background-color:#224b73;height:35px;width:100%;"></p>
+                        <div class="blank10"></div>
+                    </div>
+                </div>
+              </div>
+              <div class="right_content">
+                  
+                <div class="data">
+                    <div class="data_left">
+                        <span class="data_left_week">周二</span>
+                        <span class="data_left_day">12.05</span>
+                    </div>
+                    <a class="data_right">
+                        签到
+                        <!--<span class="data_right_clip"></span>-->
+                    </a>
+                    <div class="data_count">
+                        <span class="count_num">2</span>
+                        <span class="count_word">Days</span>
+                    </div>
+                </div>
+
+                <div class="hotnews main">
+                    <p>大家都在看</p>
+                    <ol class="clearfix">
+                        <li><a href="#"><img src="1512369552157_76131.jpg" alt="news"><span>林志玲身穿粉色透视裙，亮相全场！</span></a></li>
+                        <li><a href="#"><img src="1512369605753_674823.jpg" alt="news"><span>张歆艺时尚街拍，少女气息十足！</span></a></li>
+                        <li><a href="#"><img src="0.jpg" alt="news"><span>惊！芦苇weiwei账号曝光了！</span></a></li>
+                    </ol>
+                    <div class="blank15"></div>
+                </div>
+                
+                <div class="hotnews main">
+                    <a class="first" href="#">谁看过我</a><span> |</span>
+                    <a class="lst" href="#">我看过谁</a><span> |</span>
+                    <a class="lst" href="#">被挡访客</a>
+                    <div class="clearfix">
+                        <div class="pic_list">
+                            <a href="#"  target="_blank">
+                                <div>
+                                    <img src="1512369552157_76131.jpg" alt="news" style="width:55px;height:55px">
+                                </div>
+                                
+                            </a>
+                            <p style="text-align:center">11月11日</p>
+                        </div>
+                        <div class="pic_list">
+                            <a href="#" target="_blank">
+                                <div>
+                                    <img src="1512369605753_674823.jpg" alt="news"  style="width:55px;height:55px">
+                                </div>
+                                
+                            </a>
+                            <p style="text-align:center">11月8日</p>
+                        </div>
+                        <div class="pic_list">
+                            <a href="#" target="_blank">
+                                <div>
+                                    <img src="0.jpg" alt="news"  style="width:55px;height:55px">
+                                </div>
+                                
+                            </a>
+                            <p style="text-align:center">11月9日</p>
+                        </div>
+                    </div>
+
+                    <div class="clearfix">
+                            <div class="pic_list">
+                                <a href="#"  target="_blank">
+                                    <div>
+                                        <img src="1512369552157_76131.jpg" alt="news" style="width:55px;height:55px">
+                                    </div>
+                                    
+                                </a>
+                                <p style="text-align:center">11月11日</p>
+                            </div>
+                            <div class="pic_list">
+                                <a href="#" target="_blank">
+                                    <div>
+                                        <img src="1512369605753_674823.jpg" alt="news"  style="width:55px;height:55px">
+                                    </div>
+                                    
+                                </a>
+                                <p style="text-align:center">11月8日</p>
+                            </div>
+                            <div class="pic_list">
+                                <a href="#" target="_blank">
+                                    <div>
+                                        <img src="0.jpg" alt="news"  style="width:55px;height:55px">
+                                    </div>
+                                    
+                                </a>
+                                <p style="text-align:center">11月9日</p>
+                            </div>
+                        </div>
+
+                        <div class="clearfix">
+                                <div class="pic_list">
+                                    <a href="#"  target="_blank">
+                                        <div>
+                                            <img src="1512369552157_76131.jpg" alt="news" style="width:55px;height:55px">
+                                        </div>
+                                        
+                                    </a>
+                                    <p style="text-align:center">11月11日</p>
+                                </div>
+                                <div class="pic_list">
+                                    <a href="#" target="_blank">
+                                        <div>
+                                            <img src="1512369605753_674823.jpg" alt="news"  style="width:55px;height:55px">
+                                        </div>
+                                        
+                                    </a>
+                                    <p style="text-align:center">11月8日</p>
+                                </div>
+                                <div class="pic_list">
+                                    <a href="#" target="_blank">
+                                        <div>
+                                            <img src="0.jpg" alt="news"  style="width:55px;height:55px">
+                                        </div>
+                                        
+                                    </a>
+                                    <p style="text-align:center">11月9日</p>
+                                </div>
+                            </div>
+                    
+                    <div class="blank10"></div>
+                    <div class="blankall"></div>
+                    
+                    <div class="clearfix">
+                        <div class="text_list">
+                            <p>今日浏览</p>
+                            <p>0</p>
+                        </div>
+                        <div class="text_list">
+                            <p>总浏览</p>
+                            <p>1129</p>
+                        </div>
+                        <div class="text_list">
+                            <p>被挡访客</p>
+                            <p>76</p>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            
+              </div>
+
+              </div>
+
+              <div class="left_content">
+                    <ul class="left_list">
+                        <li><a href="#">好友动态</a></li>
+                        <li><a href="#">特别关心</a></li>
+                        <li><a href="#">与我相关</a></li>
+                        <li><a href="#">那年今日</a></li>
+                        <li><a href="#">腾讯课堂</a></li>
+                        <li><a href="#">游戏应用</a></li>
+                        <li><a href="#">我的收藏</a></li>
+                    </ul>
+                    <ul class="connect_bottom">
+                        <li><a href="#">QQ农场</a></li>
+                        <li><a href="#">QQ牧场</a></li>
+                        <li><a href="#">花藤</a></li>
+                        <li><a href="#">礼物</a></li>
+                        <li><a href="#">领黄钻特权!</a></li>
+                        <li><a href="#">游戏应用中心</a></li>
+                        <li><a href="#">我的全部游戏应用>></a></li>
+                        <li><p class="title">热门游戏</p></li>
+                    </ul>
+                    <ul class="connect_bottom">
+                        <li><a href="#">三生三世正式版</a></li>
+                        <li><a href="#">圣火明尊</a></li>
+                        <li><a href="#">极品三国志</a></li>
+                        <li><p class="title">新品抢先</p></li>
+                    </ul>
+                    <ul class="connect_bottom">
+                        <li><a href="#">贪婪洞窟</a></li>
+                        <li><p class="title">休闲娱乐</p></li>
+                    </ul>
+                    <ul class="connect_bottom">
+                        <li><a href="#">炫舞时代</a></li>
+                        <li><a href="#">QQ空间农场</a></li>
+                        <li><a href="#">捕了个鱼</a></li>
+                        <li><a href="#">积分兑换实物</a></li>
+                        <li><a href="#">每日抽奖</a></li>
+                    </ul>
+                  </div>
+
+            </div>
+            </div>
+        </div>
+    </div>
+    <!--固定标贴-->
+    <style type="text/css">
+        #newBox{display:none; position:fixed; width:110px; font-size:12px;margin-top:-90px;top:50%;right:10px;_position:absolute; z-index: 9; }
+        #newBox p{margin:0}
+        #newBox a,#newBox img{display:block}
+        #newBox a{text-decoration:none; color:#666; background:#ebebeb}
+        #newBox .newsBox-bd{text-align:center}
+        /*二维码下载*/
+        #newBox .codeToDown{padding:4px 9px 10px;width: 110px;right:10px;}
+        #newBox .codeToDown:hover{background:#d2dee5}
+        #newBox .codeToDown img{margin:5px 0; border:none}
+        /*返回顶部*/
+        #newBox .backToTop{padding:0 0 4px 45px;background:#ebebeb;cursor:pointer;z-index:10}
+        #newBox .backToTop .backToTopArrow{display:block;width:0;height:0;border-color:#ebebeb #ebebeb #999 #ebebeb;border-style:solid;border-width:10px;overflow:hidden}
+        #newBox .backToTop:hover .backToTopArrow{border-color:#ebebeb #ebebeb #333 #ebebeb}
+    </style>
+    <div id="newBox">
+        <div class="newsBox-hd">
+            <a class="backToTop" href="javascript:;" onclick="window.scrollTo(0,0);return false;" title="返回顶部">
+                <span class="backToTopArrow"></span>
+            </a>
+        </div>
+        <div class="newsBox-bd">
+            <a class="codeToDown" target="_blank" href="#">
+                微信 
+                <img src="webwxgetmsgimg.jpg" width="90" height="90" alt="微信 ">
+                加好友
+            </a>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function addEvent(node, type, listener) {
+            if (node.addEventListener) {
+                node.addEventListener(type, listener, false);
+                return true;
+            } else if (node.attachEvent) {
+                node['e' + type + listener] = listener;
+                node[type + listener] = function() {
+                    node['e' + type + listener](window.event);
+                }
+                node.attachEvent('on' + type, node[type + listener]);
+                return true;
+            }
+            return false;
+        }
+       
+        var newAppBox = document.getElementById("newBox");
+        function showNewApp() {
+            var cWidth = document.documentElement.clientWidth || document.body.clientWidth;
+            var cHeight = document.documentElement.clientHeight || document.body.clientHeight;
+            var sTop = document.documentElement.scrollTop || document.body.scrollTop;
+            var mHeight = Math.floor(cHeight / 2) + 200;
+            var photo = window.location.href.indexOf("photo");
+            var ie6 = !window.XMLHttpRequest;
+            if ( (sTop > mHeight || photo != -1)  && cWidth > 1250) {
+                newAppBox.style.display = 'block';
+            } else {
+                newAppBox.style.display = 'none';
+            }
+            newAppBox.style.top = mHeight + 'px';
+            if (ie6) {
+                newAppBox.style.top = sTop + mHeight + 'px';
+            }
+        }
+        addEvent(window, "load", showNewApp);
+        addEvent(window, "scroll", showNewApp);
+        addEvent(window, "resize", showNewApp);
+        addEvent(document, "mousewheel", showNewApp);
+    </script>
+</body>
+</html>
